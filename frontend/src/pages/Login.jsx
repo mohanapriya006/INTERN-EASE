@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
@@ -36,7 +38,13 @@ const Login = () => {
         password
       });
       alert(response.data.message);
-      navigate('/dashboard'); // Redirect to the user/company dashboard
+
+      if (loginType === 'company') {
+        navigate('/company-dashboard');
+      } else {
+        navigate('/user-dashboard');
+      }
+      
     } catch (error) {
       alert(error.response?.data?.message || 'Login failed!');
     }

@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login"; 
 import Signup from "./pages/Signup";
+import CompanyDashboard from "./company/pages/CompanyDashboard";
 
 const App = () => {
   return (
@@ -9,7 +10,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-        {/* Add more routes here for user, company, and admin dashboards */}
+        <Route path="/company-dashboard" element={<CompanyDashboard />} />
+
+        {/* <Route path="/user-dashboard" element={<UserDashboard />} />  */}
+
+
+   
       </Routes>
     </Router>
   );
