@@ -1,0 +1,30 @@
+.logout-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.highlight {
+    color: #3498db;
+}
+
+p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.login-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

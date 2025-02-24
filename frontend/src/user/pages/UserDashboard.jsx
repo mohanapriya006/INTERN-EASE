@@ -9,9 +9,11 @@ const UserDashboard = () => {
     <div className="user-dashboard-container">
       {/* Sidebar */}
       <nav className="sidebar">
-        <h2 className="brand">
-          Inter<span className="blue">@</span>Ease
-        </h2>
+    <h2 className="brand">
+        <span style={{ color: "white" }}>Intern</span> 
+        <span className="blue">@</span>
+        <span style={{ color: "white" }}>Ease</span>
+    </h2>
         <ul className="menu">
           <li><Link to="/user-dashboard" className="active">Dashboard</Link></li>
           <li><Link to="/browse-jobs">Browse Jobs</Link></li>

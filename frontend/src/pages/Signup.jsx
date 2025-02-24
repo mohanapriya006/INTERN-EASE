@@ -39,7 +39,14 @@ const Signup = () => {
       const response = await axios.post('http://localhost:5000/api/auth/signup', payload);
 
       alert(response.data.message);
-      navigate('/'); // Redirect to login page
+
+      // ✅ Store User Data for Profile Page
+      localStorage.setItem("userData", JSON.stringify({
+        name: formData.name,
+        email: formData.email
+      }));
+
+      navigate('/user-profile'); // Redirect to profile page after signup
     } catch (error) {
       alert("Signup failed: " + (error.response?.data?.error || error.message));
     }
