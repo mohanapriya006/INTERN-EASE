@@ -11,6 +11,7 @@ import CourseAndCertificates from "./user/pages/CourseAndCertificates";
 import UserProfile from "./user/pages/UserProfile";
 import Help from "./user/pages/Help";
 import Logout from "./user/pages/Logout";
+import AdminPanel from "./admin/pages/AdminPanel"; // 
 const App = () => {
   return (
     <Router>
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/help" element={<Help />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/admin-panel" element={<AdminPanel />} />
       </Routes>
     </Router>
   );
