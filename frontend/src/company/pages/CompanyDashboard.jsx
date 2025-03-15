@@ -7,9 +7,11 @@ const CompanyDashboard = () => {
     <div className="dashboard-container">
       {/* Sidebar */}
       <nav className="sidebar">
-        <h2 className="brand">
-          Inter<span className="blue">@</span>Ease
-        </h2>
+      <h2 className="brand">
+  <span className="white">Intern</span><span className="blue">@</span><span className="white">Ease</span>
+</h2>
+
+
         <ul className="menu">
           <li><Link to="/company-dashboard" className="active">Dashboard</Link></li>
           <li><Link to="/post-internship">Post Internship</Link></li>

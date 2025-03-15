@@ -1,82 +1,108 @@
-
-
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { X } from 'lucide-react';
-import axios from 'axios';
-import '../styles/Login.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { X } from "lucide-react";
+import axios from "axios";
+import "../styles/Login.css";
 
 const Login = () => {
   const [showModal, setShowModal] = useState(false);
-  const [loginType, setLoginType] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginType, setLoginType] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (type) => {
     setLoginType(type);
     setShowModal(true);
+    setError(""); // Reset error on modal open
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (loginType === 'admin') {
-      if (email === 'admin@internease.com' && password === 'admin123') {
-        alert('Admin login successful!');
-        navigate('/admin-dashboard');
+    if (loginType === "admin") {
+      if (email === "admin@internease.com" && password === "admin123") {
+        alert("Admin login successful!");
+        navigate("/admin-dashboard");
       } else {
-        alert('Invalid admin credentials!');
+        setError("Invalid admin credentials!");
       }
       return;
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
-        userType: loginType,
+      const response = await axios.post("http://localhost:5000/api/auth/login", {
         email,
-        password
+        password,
       });
-      alert(response.data.message);
 
-      if (loginType === 'company') {
-        navigate('/company-dashboard');
-      } else {
-        navigate('/user-dashboard');
-      }
+      const { token, userType } = response.data;
+      localStorage.setItem("token", token);
+      localStorage.setItem("userType", userType);
+
+      alert("Login successful!");
       
+      if (userType === "company") {
+        navigate("/company-dashboard");
+      } else {
+        navigate("/user-dashboard");
+      }
+
     } catch (error) {
-      alert(error.response?.data?.message || 'Login failed!');
+      setError(error.response?.data?.error || "Login failed!");
     }
   };
 
   return (
     <div className="login-container">
-      <header className="header">Intern<span>@</span>Ease</header>
+      <header className="header">
+        Intern<span>@</span>Ease
+      </header>
       <div className="login-content">
         <h1>Welcome to Intern@Ease</h1>
         <p className="tagline">Bridging the gap between talent and opportunity</p>
         <p className="sub-tagline">Your gateway to meaningful internship experiences</p>
+
         <div className="login-buttons">
-          <button onClick={() => handleLogin('user')}>User Login</button>
-          <button onClick={() => handleLogin('company')}>Company Login</button>
-          <button onClick={() => handleLogin('admin')}>Admin Login</button>
+          <button onClick={() => handleLogin("user")}>User Login</button>
+          <button onClick={() => handleLogin("company")}>Company Login</button>
+          <button onClick={() => handleLogin("admin")}>Admin Login</button>
         </div>
-        <p className="signup-link">Don't have an account? <span onClick={() => navigate('/signup')}>Sign Up</span></p>
+
+        <p className="signup-link">
+          Don't have an account? <span onClick={() => navigate("/signup")}>Sign Up</span>
+        </p>
       </div>
+
       {showModal && (
         <div className="modal-overlay">
           <div className="modal">
-            <button className="close-button" onClick={() => setShowModal(false)}><X size={24} /></button>
+            <button className="close-button" onClick={() => setShowModal(false)}>
+              <X size={24} />
+            </button>
             <h2>{loginType.charAt(0).toUpperCase() + loginType.slice(1)} Login</h2>
+            
+            {error && <p className="error-message">{error}</p>}
+
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Email:</label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label>Password:</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </div>
               <button type="submit">Login</button>
             </form>
