@@ -8,15 +8,16 @@ const CompanyDashboard = () => {
       {/* Sidebar */}
       <nav className="sidebar">
       <h2 className="brand">
-  <span className="white">Intern</span><span className="blue">@</span><span className="white">Ease</span>
-</h2>
+                    <span style={{ color: "white" }}>Intern</span> 
+                    <span className="blue">@</span>
+                    <span style={{ color: "white" }}>Ease</span>
+                </h2>
 
 
         <ul className="menu">
           <li><Link to="/company-dashboard" className="active">Dashboard</Link></li>
           <li><Link to="/post-internship">Post Internship</Link></li>
-          <li><Link to="/view-candidates">View Candidates</Link></li>
-          <li><Link to="/manage-applications">Manage Applications</Link></li>
+          <li><Link to="/view-applications">View Applications</Link></li>
           <li><Link to="/interview-scheduling">Interview Scheduling</Link></li>
           <li><Link to="/reports-analytics">Reports & Analytics</Link></li>
           <li><Link to="/settings">Settings</Link></li>
