@@ -22,8 +22,13 @@ import CourseAndCertificates from "./user/pages/CourseAndCertificates";
 import UserProfile from "./user/pages/UserProfile";
 import Help from "./user/pages/Help";
 import Logout from "./user/pages/Logout";
+<<<<<<< HEAD
 
 
+=======
+import PostInternship from './company/pages/PostInternship';
+import ViewApplications from './company/pages/ViewApplications';
+>>>>>>> 6d096ed (fetched applicatons to the comapny side)
 const App = () => {
   return (
     <Router>
@@ -34,6 +39,11 @@ const App = () => {
 
         {/* Company Routes */}
         <Route path="/company-dashboard" element={<CompanyDashboard />} />
+<<<<<<< HEAD
+=======
+        <Route path="/post-internship" element={<PostInternship />} />
+        <Route path="/view-applications" element={<ViewApplications />} />
+>>>>>>> 6d096ed (fetched applicatons to the comapny side)
       
         {/* User Routes */}
         <Route path="/user-dashboard" element={<UserDashboard />} />
@@ -44,6 +54,10 @@ const App = () => {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/help" element={<Help />} />
         <Route path="/logout" element={<Logout />} />
+<<<<<<< HEAD
+=======
+        <Route path="/post-internship" element={<PostInternship />} />
+>>>>>>> 6d096ed (fetched applicatons to the comapny side)
 
         {/* Admin Routes */}
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
