@@ -1,104 +1,131 @@
-/* Profile Container */
 .profile-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Profile Card */
-.profile-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-/* Profile Picture */
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #3498db;
-    margin-bottom: 10px;
-}
-
-/* Profile Text */
-h1 {
-    color: #2c3e50;
-    font-size: 24px;
-}
-
-.email {
-    font-size: 14px;
-    color: #777;
-}
-
-.bio {
-    font-style: italic;
-    color: #555;
-    margin-top: 5px;
-}
-
-/* Edit Mode */
-.edit-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-}
-
-.edit-profile input,
-.edit-profile textarea {
-    width: 80%;
-    padding: 10px;
+    justify-content: center; 
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .profile-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    margin: 20px 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #007bff;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  p {
     font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border 0.3s ease-in-out;
-}
-
-.edit-profile input:focus,
-.edit-profile textarea:focus {
-    border: 1px solid #3498db;
-    outline: none;
-}
-
-/* Buttons */
-.button-container {
+    color: #555;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+  .bio {
+    font-style: italic;
+    color: #777;
+    margin: 15px 0;
+  }
+  
+  .button-container {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.save-btn, .cancel-btn {
-    padding: 10px 15px;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 10px 20px;
     font-size: 14px;
-}
-
-.save-btn {
-    background-color: #27ae60;
-    color: white;
-}
-
-.save-btn:hover {
-    background-color: #219150;
-}
-
-.cancel-btn {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.cancel-btn:hover {
-    background-color: #c0392b;
-}
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+  }
+  
+  .save-btn:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .applied-section {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px 0;
+  }
+  
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .job-card {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .no-data {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+  }
+  
