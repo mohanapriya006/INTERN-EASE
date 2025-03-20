@@ -8,7 +8,8 @@ const AppliedInternshipSchema = new mongoose.Schema({
     internshipId: { type: mongoose.Schema.Types.ObjectId, ref: "PostInternship", required: true },
     company: { type: String, required: true },
     title: { type: String, required: true },
-    appliedAt: { type: Date, default: Date.now }
+    appliedAt: { type: Date, default: Date.now },
+    status: { type: String, default: "applied", enum: ["applied", "accepted", "rejected"] }
 });
 
 const AppliedInternship = mongoose.model("AppliedInternship", AppliedInternshipSchema);

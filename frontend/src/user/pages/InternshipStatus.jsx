@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Notifications.css";
+import "../styles/InternshipStatus.css";
 
 const Notifications = () => {
   // Fetch stored notifications from localStorage

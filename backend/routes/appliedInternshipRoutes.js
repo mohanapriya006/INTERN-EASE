@@ -3,7 +3,8 @@ import {
     applyForInternship, 
     getApplicationsByCompany, 
     getAllApplications, 
-    getApplicationsByInternship 
+    getApplicationsByInternship,
+    updateApplicationStatus
 } from "../controllers/AppliedInternship.controller.js";
 
 const router = express.Router();
@@ -19,5 +20,7 @@ router.get("/company", getApplicationsByCompany);
 
 // Get applications by internship ID
 router.get("/internship/:internshipId", getApplicationsByInternship);
+
+router.put('/:id/status', updateApplicationStatus);
 
 export default router;

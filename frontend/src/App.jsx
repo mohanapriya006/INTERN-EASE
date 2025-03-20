@@ -17,7 +17,7 @@ import ManageJobs from "./admin/pages/ManageJobs";
 import ManageUsers from "./admin/pages/ManageUsers";
 import BrowseJobs from "./user/pages/BrowseJobs";
 import FindInternships from "./user/pages/FindInternships";
-import Notifications from "./user/pages/Notifications";
+import InternshipStatus from "./user/pages/InternshipStatus";
 import CourseAndCertificates from "./user/pages/CourseAndCertificates";
 import UserProfile from "./user/pages/UserProfile";
 import Help from "./user/pages/Help";
@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route path="/browse-jobs" element={<BrowseJobs />} />
         <Route path="/find-internships" element={<FindInternships />} />
-        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/internship-status" element={<InternshipStatus />} />
         <Route path="/course-and-certificates" element={<CourseAndCertificates />} />
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/help" element={<Help />} />

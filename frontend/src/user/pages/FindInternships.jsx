@@ -101,7 +101,7 @@ const FindInternships = () => {
                     <li><Link to="/user-dashboard">Dashboard</Link></li>
                     <li><Link to="/browse-jobs">Browse Jobs</Link></li>
                     <li><Link to="/find-internships" className="active">Find Internships</Link></li>
-                    <li><Link to="/notifications">Notifications</Link></li>
+                    <li><Link to="/internship-status">Internship Status</Link></li>
                     <li><Link to="/course-and-certificates">Courses & Certificates</Link></li>
                     <li><Link to="/user-profile">User Profile</Link></li>
                     <li><Link to="/help">Help</Link></li>
