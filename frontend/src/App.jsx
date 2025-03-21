@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Import Components
@@ -24,6 +26,8 @@ import Help from "./user/pages/Help";
 import Logout from "./user/pages/Logout";
 import PostInternship from './company/pages/PostInternship';
 import ViewApplications from './company/pages/ViewApplications';
+import Report from './company/pages/Report';
+// import Schedule from './company/pages/Schedule';
 const App = () => {
   return (
     <Router>
@@ -36,6 +40,8 @@ const App = () => {
         <Route path="/company-dashboard" element={<CompanyDashboard />} />
         <Route path="/post-internship" element={<PostInternship />} />
         <Route path="/view-applications" element={<ViewApplications />} />
+        <Route path="/reports-analytics" element={<Report />} />
+        {/* <Route path="/interview-scheduling" element={<Schedule />} /> */}
       
         {/* User Routes */}
         <Route path="/user-dashboard" element={<UserDashboard />} />

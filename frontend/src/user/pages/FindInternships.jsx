@@ -99,12 +99,22 @@ const FindInternships = () => {
                 </h2>
                 <ul className="menu">
                     <li><Link to="/user-dashboard">Dashboard</Link></li>
+                    <li>
+                                <a
+                                  href="http://resumeanalyser-zrncmw3djin5dqqslxseks.streamlit.app/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Resume Matcher
+                                </a>
+                     </li>
                     <li><Link to="/browse-jobs">Browse Jobs</Link></li>
                     <li><Link to="/find-internships" className="active">Find Internships</Link></li>
                     <li><Link to="/internship-status">Internship Status</Link></li>
                     <li><Link to="/course-and-certificates">Courses & Certificates</Link></li>
                     <li><Link to="/user-profile">User Profile</Link></li>
                     <li><Link to="/help">Help</Link></li>
+                    
                     <li><Link to="/logout" className="logout">Logout</Link></li>
                 </ul>
             </nav>

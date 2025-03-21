@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/BrowseJobs.css";
 
 const jobData = [
@@ -48,40 +49,71 @@ const BrowseJobs = () => {
 
   return (
     <div className="browse-jobs-container">
-      <h1>Browse Jobs</h1>
-      <div className="filters">
-        <input type="text" name="location" placeholder="Location" onChange={handleFilterChange} />
-        <input type="text" name="company" placeholder="Company Name" onChange={handleFilterChange} />
-        <input type="text" name="salary" placeholder="Salary (e.g. ₹10 LPA)" onChange={handleFilterChange} />
-        <select name="type" onChange={handleFilterChange}>
-          <option value="">Job Type</option>
-          <option value="Remote">Remote</option>
-          <option value="On-Site">On-Site</option>
-        </select>
-        <select name="role" onChange={handleFilterChange}>
-          <option value="">Role Type</option>
-          <option value="Full-time">Full-time</option>
-          <option value="Internship">Internship</option>
-          <option value="Contract">Contract</option>
-        </select>
-      </div>
+      <nav className="sidebar">
+        <h2 className="brand">
+          <span style={{ color: "white" }}>Intern</span> 
+          <span className="blue">@</span>
+          <span style={{ color: "white" }}>Ease</span>
+        </h2>
+        <ul className="menu">
+          <li><Link to="/user-dashboard">Dashboard</Link></li>
+          <li>
+            <a
+              href="http://resumeanalyser-zrncmw3djin5dqqslxseks.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume Matcher
+            </a>
+          </li>
+          <li><Link to="/browse-jobs" className="active">Browse Jobs</Link></li>
+          <li><Link to="/find-internships">Find Internships</Link></li>
+          <li><Link to="/internship-status">Internship Status</Link></li>
+          <li><Link to="/course-and-certificates">Courses & Certificates</Link></li>
+          <li><Link to="/user-profile">User Profile</Link></li>
+          <li><Link to="/help">Help</Link></li>
+          <li><Link to="/logout" className="logout">Logout</Link></li>
+        </ul>
+      </nav>
 
-      <div className="job-list">
-        {filteredJobs.length > 0 ? (
-          filteredJobs.map((job) => (
-            <div key={job.id} className="job-card">
-              <h2>{job.title}</h2>
-              <p><strong>Company:</strong> {job.company}</p>
-              <p><strong>Location:</strong> {job.location}</p>
-              <p><strong>Salary:</strong> {job.salary}</p>
-              <p><strong>Type:</strong> {job.type}</p>
-              <p><strong>Role:</strong> {job.role}</p>
-              <button className="apply-btn" onClick={() => handleApply(job)}>Apply Now</button>
-            </div>
-          ))
-        ) : (
-          <p className="no-jobs">No jobs match your criteria.</p>
-        )}
+      <div className="main-content">
+        <h1>Browse Jobs</h1>
+        <div className="compact-filters">
+          <input type="text" name="location" placeholder="Location" onChange={handleFilterChange} />
+          <input type="text" name="company" placeholder="Company" onChange={handleFilterChange} />
+          <input type="text" name="salary" placeholder="Salary" onChange={handleFilterChange} />
+          <select name="type" onChange={handleFilterChange}>
+            <option value="">Job Type</option>
+            <option value="Remote">Remote</option>
+            <option value="On-Site">On-Site</option>
+          </select>
+          <select name="role" onChange={handleFilterChange}>
+            <option value="">Role</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Internship">Internship</option>
+            <option value="Contract">Contract</option>
+          </select>
+        </div>
+
+        <div className="job-grid">
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job) => (
+              <div key={job.id} className="job-card">
+                <h2>{job.title}</h2>
+                <div className="job-details">
+                  <p><strong>Company:</strong> {job.company}</p>
+                  <p><strong>Location:</strong> {job.location}</p>
+                  <p><strong>Salary:</strong> {job.salary}</p>
+                  <p><strong>Type:</strong> {job.type}</p>
+                  <p><strong>Role:</strong> {job.role}</p>
+                </div>
+                <button className="apply-btn" onClick={() => handleApply(job)}>Apply Now</button>
+              </div>
+            ))
+          ) : (
+            <p className="no-jobs">No jobs match your criteria.</p>
+          )}
+        </div>
       </div>
     </div>
   );

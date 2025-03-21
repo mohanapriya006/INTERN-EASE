@@ -20,7 +20,7 @@ const CompanyDashboard = () => {
           <li><Link to="/view-applications">View Applications</Link></li>
           <li><Link to="/interview-scheduling">Interview Scheduling</Link></li>
           <li><Link to="/reports-analytics">Reports & Analytics</Link></li>
-          <li><Link to="/settings">Settings</Link></li>
+         
           <li><Link to="/logout" className="logout">Logout</Link></li>
         </ul>
       </nav>

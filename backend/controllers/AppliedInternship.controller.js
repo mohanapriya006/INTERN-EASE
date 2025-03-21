@@ -1,5 +1,7 @@
 import AppliedInternship from "../models/AppliedInternship.model.js";
 import PostInternship from "../models/PostInternship.model.js";
+import User from "../models/User.model.js";
+
 
 // Apply for an internship
 export const applyForInternship = async (req, res) => {
@@ -179,3 +181,29 @@ export const updateApplicationStatus = async (req, res) => {
       });
     }
   };
+
+
+  export const getApplicationsByUser = async (req, res) => {
+    try {
+        const { id } = req.user; // Extract user ID from JWT middleware
+
+        // Fetch user details from User model
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        // Fetch applied internships using the user's email
+        const applications = await AppliedInternship.find({ email: user.email });
+
+        res.status(200).json({
+            success: true,
+            data: applications
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};

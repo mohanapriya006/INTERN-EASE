@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import nodePolyfills from 'vite-plugin-node-stdlib-browser';
 
 export default defineConfig({
-  plugins: [react(), nodePolyfills()],
+  plugins: [react()],
   resolve: {
     alias: {
-      crypto: 'crypto-browserify',
+      crypto: 'node-stdlib-browser/helpers/crypto', // Use stdlib directly
     },
   },
   build: {

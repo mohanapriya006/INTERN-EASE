@@ -4,8 +4,12 @@ import {
     getApplicationsByCompany, 
     getAllApplications, 
     getApplicationsByInternship,
-    updateApplicationStatus
+    updateApplicationStatus,
+    getApplicationsByUser
 } from "../controllers/AppliedInternship.controller.js";
+
+import { isAuthenticated } from "../middleware/authMiddleware.js";
+
 
 const router = express.Router();
 
@@ -22,5 +26,9 @@ router.get("/company", getApplicationsByCompany);
 router.get("/internship/:internshipId", getApplicationsByInternship);
 
 router.put('/:id/status', updateApplicationStatus);
+
+router.get("/user", isAuthenticated, getApplicationsByUser);
+
+//  router.get("/user/:userId", getApplicationsByUser); 
 
 export default router;

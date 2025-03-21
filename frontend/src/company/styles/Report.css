@@ -1,0 +1,144 @@
+.dashboard-container {
+    display: flex !important;
+    height: 100vh !important;
+    position: relative !important;
+  }
+  
+  .sidebar {
+    position: fixed !important;
+    height: 100vh !important;
+    z-index: 100 !important;
+    overflow-y: auto !important;
+    width: 250px !important;
+  }
+  
+  .report-container {
+    position: absolute !important;
+    left: 250px !important; /* Match sidebar width */
+    width: calc(100% - 270px) !important; /* Extra margin for breathing room */
+    padding: 20px !important;
+    overflow-y: auto !important;
+    height: 100vh !important;
+    background: #f8f9fa !important;
+  }
+  
+  /* Enhanced stats cards */
+  .stats {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 15px !important;
+    margin-bottom: 25px !important;
+  }
+  
+  .card {
+    background: white !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .card svg {
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .card span {
+    font-size: 22px !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
+  }
+  
+  .users svg { color: #3498db !important; }
+  .internships svg { color: #2ecc71 !important; }
+  .applications svg { color: #f39c12 !important; }
+  .interviews svg { color: #9b59b6 !important; }
+  .hires svg { color: #1abc9c !important; }
+  
+  /* Graph layout */
+  .graphs-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .chart-container, .pie-container {
+    background: white !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    height: 350px !important;
+  }
+  
+  /* Updated Map styles */
+  .map-container {
+    background: white !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+  
+  .map-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+  
+  .map-wrapper iframe {
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  /* Dashboard title */
+  .dashboard-title {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+    color: #2c3e50 !important;
+  }
+  
+  .dashboard-title svg {
+    margin-right: 10px !important;
+    color: #3498db !important;
+  }
+  
+  /* Active link styling for sidebar */
+  .menu li a.active, 
+  .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #3498db !important;
+    border-left: 4px solid #3498db !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .graphs-row {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .report-container {
+      left: 0 !important;
+      width: 100% !important;
+      padding: 15px !important;
+      margin-top: 60px !important;
+    }
+    
+    .sidebar {
+      width: 100% !important;
+      height: 60px !important;
+      padding: 10px !important;
+    }
+  }
